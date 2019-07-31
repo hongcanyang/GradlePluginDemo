@@ -1,0 +1,6 @@
+include ':app',
+        ':plugintest',
+        ':pluginparams',
+        ':aop_javassist',
+        ':aop_asm'
+//println("---- **** -- -- setttings.gradle excuted parse   22233")

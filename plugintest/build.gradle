@@ -1,0 +1,26 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    compile gradleApi()
+    compile localGroovy()
+    implementation 'com.android.tools.build:gradle-api:2.3.2'
+}
+
+repositories {
+    mavenCentral()
+}
+group='com.example.gradle.plugin'
+version='1.0.0'
+
+ext {
+    hasTests = true
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('../repo'))
+        }
+    }
+}

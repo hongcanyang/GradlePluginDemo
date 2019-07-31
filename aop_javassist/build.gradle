@@ -1,0 +1,25 @@
+apply plugin: 'groovy'
+apply plugin: 'maven'
+
+dependencies {
+    compile gradleApi()
+    implementation 'com.android.tools.build:gradle:2.3.2'
+    implementation 'com.android.tools.build:gradle-api:2.3.2'
+    implementation 'com.android.tools.build:transform-api:1.5.0'
+    implementation group: 'org.javassist', name: 'javassist', version: '3.23.1-GA'
+    implementation 'commons-io:commons-io:2.5'
+}
+
+repositories {
+    mavenCentral()
+}
+group='com.example.gradle.plugin'
+version='1.0.0'
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            repository(url: uri('../repo'))
+        }
+    }
+}
